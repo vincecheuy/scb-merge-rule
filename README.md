@@ -24,6 +24,6 @@ ConcurrentPublisherTest - stress test on multi-threading map operation
 Unit tests to test rule, model and publish  
 
 # 2. Executable Jar  
-###Under folder - scbtest/src/main/resources/  
+### Under folder - scbtest/src/main/resources/  
 cd to the jar folder  
 java -jar scbtest.jar  

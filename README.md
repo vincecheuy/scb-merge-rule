@@ -27,3 +27,6 @@ Unit tests to test rule, model and publish
 ### Under folder - scbtest/src/main/resources/  
 cd to the jar folder  
 java -jar scbtest.jar  
+
+## Tom's reference
+https://bitbucket.org/tomboxfan/2018.01.scbtest/src/master/

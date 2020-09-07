@@ -13,6 +13,6 @@ public interface MergeRule<T extends BaseInstrument> {
      * Merge the received LME/Prime instrument, into the published instrument
      * Return the merged instrument
      */
-    InternalInstrument merge(T sourceInstrument, InternalInstrument targetInstrument);
+    void merge(T sourceInstrument, InternalInstrument targetInstrument, boolean ifExists);
 
 }

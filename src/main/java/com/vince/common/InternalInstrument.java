@@ -13,6 +13,8 @@ public class InternalInstrument {
     private String label;
     private boolean tradable;
 
+    public InternalInstrument(){}
+
     public InternalInstrument(Builder builder) {
         this.lastTradingDate = builder.getLastTradingDate();
         this.deliveryDate = builder.getDeliveryDate();

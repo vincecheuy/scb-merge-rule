@@ -23,12 +23,14 @@ public class InstrumentPublisher {
      */
     public void receiveAndPublish(BaseInstrument instrument, MergeRule mergeRule){
         InternalInstrument oldInstrument = publishedInstrumentMap.get(instrument.getKey());
-        //based on actual instrument type, mergeRule will merge accordingly
-        InternalInstrument newInstrument = mergeRule.merge(instrument, oldInstrument);
-        if(oldInstrument == null)
-            publishedInstrumentMap.putIfAbsent(instrument.getKey(), newInstrument);
-        else
-            publishedInstrumentMap.replace(instrument.getKey(), newInstrument);
+        boolean ifExists = false;
+        if(oldInstrument == null){
+            oldInstrument = new InternalInstrument();
+            publishedInstrumentMap.put(instrument.getKey(), oldInstrument);
+        }else{
+            ifExists = true;
+        }
+        mergeRule.merge(instrument, oldInstrument, ifExists);
     }
 
 }
